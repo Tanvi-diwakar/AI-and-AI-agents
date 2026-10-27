@@ -1,0 +1,2 @@
+Norvig top95 entry 1, with added clue r1c2=6.
+No direct duplicate clues. Exhaustive search found no solution.

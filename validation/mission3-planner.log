@@ -1,0 +1,21 @@
+2026-10-26 19:21:06,753 INFO     using search: greedy_best_first_search
+2026-10-26 19:21:06,753 INFO     using heuristic: hFFHeuristic
+2026-10-26 19:21:06,753 INFO     Parsing Domain /Users/atharvghadge/Documents/Codex/2026-10-26/ana/outputs/PDDL_Completed/PDDL/PartC/domain-ext.pddl
+2026-10-26 19:21:06,754 INFO     Parsing Problem /Users/atharvghadge/Documents/Codex/2026-10-26/ana/outputs/PDDL_Completed/PDDL/PartC/mission3.pddl
+2026-10-26 19:21:06,754 INFO     17 Predicates parsed
+2026-10-26 19:21:06,754 INFO     10 Actions parsed
+2026-10-26 19:21:06,754 INFO     12 Objects parsed
+2026-10-26 19:21:06,754 INFO     0 Constants parsed
+2026-10-26 19:21:06,754 INFO     Grounding start: lunar-mission-3
+2026-10-26 19:21:06,755 INFO     Relevance analysis removed 30 facts
+2026-10-26 19:21:06,755 INFO     Grounding end: lunar-mission-3
+2026-10-26 19:21:06,755 INFO     96 Variables created
+2026-10-26 19:21:06,755 INFO     96 Operators created
+2026-10-26 19:21:06,755 INFO     Search start: lunar-mission-3
+2026-10-26 19:21:06,755 INFO     Initial h value: 20.000000
+2026-10-26 19:21:07,764 INFO     Goal reached. Start extraction of solution.
+2026-10-26 19:21:07,764 INFO     2218 Nodes expanded
+2026-10-26 19:21:07,766 INFO     Search end: lunar-mission-3
+2026-10-26 19:21:07,766 INFO     Search time: 1.0
+2026-10-26 19:21:07,766 INFO     Plan length: 24
+2026-10-26 19:21:07,768 INFO     validate could not be found on the PATH so the plan can not be validated.

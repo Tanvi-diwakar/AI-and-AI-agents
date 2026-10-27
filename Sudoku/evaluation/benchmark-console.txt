@@ -1,0 +1,9 @@
+Nearly complete    solved            0.050 ms  guesses=     0  backtracks=     0
+Generated-45       solved            0.078 ms  guesses=     0  backtracks=     0
+Norvig 1           solved            0.667 ms  guesses=   130  backtracks=   119
+Norvig 2           solved            2.311 ms  guesses=   452  backtracks=   441
+Norvig 3           solved            2.294 ms  guesses=   477  backtracks=   463
+Norvig 4           solved          116.664 ms  guesses= 24686  backtracks= 24668
+Norvig 5           solved           29.422 ms  guesses=  6188  backtracks=  6175
+Unsat-immediate    unsatisfiable     0.019 ms  guesses=     0  backtracks=     0
+Unsat-search       unsatisfiable     0.066 ms  guesses=     6  backtracks=     6

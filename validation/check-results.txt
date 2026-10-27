@@ -1,0 +1,49 @@
+Mission 1: 10 actions, replay PASS
+Mission 2: 20 actions, replay PASS
+Mission 3: 24 actions, replay PASS
+
+PASS Mission 1: plan replay, invariants at every step, all delivery goals
+PASS Mission 1: exact directed map
+PASS Mission 1: no hard-coded mission objects in domain
+PASS Mission 2: plan replay, invariants at every step, all delivery goals
+PASS Mission 2: exact directed map
+PASS Mission 2: no hard-coded mission objects in domain
+PASS Mission 3: plan replay, invariants at every step, all delivery goals
+PASS Mission 3: exact directed map
+PASS Mission 3: no hard-coded mission objects in domain
+PASS Undeployed rover cannot move
+PASS Undeployed rover cannot capture-image
+PASS Undeployed rover cannot perform-scan
+PASS Undeployed rover cannot collect-sample
+PASS Deployment requires landing site
+PASS No repeated deployment
+PASS No implicit reverse edge WP1 to WP5
+PASS Cannot transmit an unacquired image
+PASS Cannot transmit an unacquired scan
+PASS Acquisition does not save data
+PASS Image occupies shared memory: capture-image
+PASS Image occupies shared memory: perform-scan
+PASS Wrong data kind cannot be transmitted
+PASS Scan blocks image acquisition
+PASS Scan blocks second scan
+PASS Data and sample slots are independent
+PASS Cannot carry a second sample
+PASS Pickup does not store sample
+PASS Filled lander rejects another sample
+PASS Sample cannot be delivered remotely
+PASS Cannot invent a lander landing site
+PASS Transmission frees memory for new data
+PASS Cannot transmit to another rover's lander
+PASS Cannot deploy from another lander
+PASS Cannot store in another lander even when co-located
+PASS Wireless transfer needs no current or historical lander visit
+PASS Bob in control room cannot enable deployment
+PASS Alice cannot assist another lander
+PASS Alice in docking bay cannot enable transmission
+PASS Control-room presence enables transmission
+PASS Control-room presence cannot enable sample storage
+PASS Docking-bay presence enables sample storage
+PASS Astronaut cannot move between landers
+PASS Mission 3 preserves Mission 2 map, rover setup and goals
+
+43 checks passed. This is a focused semantic check, not a formal proof or VAL run.

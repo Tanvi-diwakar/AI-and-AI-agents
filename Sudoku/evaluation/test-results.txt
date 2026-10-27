@@ -1,0 +1,38 @@
+test_backtracking_is_exercised (test_solver.SolverTests.test_backtracking_is_exercised) ... ok
+test_bad_column_counts (test_solver.SolverTests.test_bad_column_counts) ... ok
+test_bad_row_counts (test_solver.SolverTests.test_bad_row_counts) ... ok
+test_bad_tokens (test_solver.SolverTests.test_bad_tokens) ... ok
+test_cli_invalid (test_solver.SolverTests.test_cli_invalid) ... ok
+test_cli_json_invalid (test_solver.SolverTests.test_cli_json_invalid) ... ok
+test_cli_json_solved (test_solver.SolverTests.test_cli_json_solved) ... ok
+test_cli_missing_file (test_solver.SolverTests.test_cli_missing_file) ... ok
+test_cli_solved (test_solver.SolverTests.test_cli_solved) ... ok
+test_cli_unsatisfiable (test_solver.SolverTests.test_cli_unsatisfiable) ... ok
+test_constructed_puzzle (test_solver.SolverTests.test_constructed_puzzle) ... ok
+test_crlf_and_whitespace (test_solver.SolverTests.test_crlf_and_whitespace) ... ok
+test_csv_and_txt_equal (test_solver.SolverTests.test_csv_and_txt_equal) ... ok
+test_csv_empty_value (test_solver.SolverTests.test_csv_empty_value) ... ok
+test_duplicate_box (test_solver.SolverTests.test_duplicate_box) ... ok
+test_duplicate_column (test_solver.SolverTests.test_duplicate_column) ... ok
+test_duplicate_row (test_solver.SolverTests.test_duplicate_row) ... ok
+test_five_published_benchmarks (test_solver.SolverTests.test_five_published_benchmarks) ... ok
+test_input_not_mutated (test_solver.SolverTests.test_input_not_mutated) ... ok
+test_invalid_api_size (test_solver.SolverTests.test_invalid_api_size) ... ok
+test_invalid_api_values (test_solver.SolverTests.test_invalid_api_values) ... ok
+test_locally_valid_unsatisfiable (test_solver.SolverTests.test_locally_valid_unsatisfiable) ... ok
+test_missing_file (test_solver.SolverTests.test_missing_file) ... ok
+test_multiple_solutions_accepted (test_solver.SolverTests.test_multiple_solutions_accepted) ... ok
+test_nearly_complete (test_solver.SolverTests.test_nearly_complete) ... ok
+test_no_final_newline (test_solver.SolverTests.test_no_final_newline) ... ok
+test_one_blank (test_solver.SolverTests.test_one_blank) ... ok
+test_repeated_calls_deterministic (test_solver.SolverTests.test_repeated_calls_deterministic) ... ok
+test_solved_grid_unchanged (test_solver.SolverTests.test_solved_grid_unchanged) ... ok
+test_twenty_generated_transformations (test_solver.SolverTests.test_twenty_generated_transformations) ... ok
+test_unsatisfiable_after_search (test_solver.SolverTests.test_unsatisfiable_after_search) ... ok
+test_utf8_bom (test_solver.SolverTests.test_utf8_bom) ... ok
+test_wrong_extension (test_solver.SolverTests.test_wrong_extension) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 0.428s
+
+OK

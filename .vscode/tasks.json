@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run VAL on all PDDL plans",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-File",
+				".vscode\\run-pddl-validation.ps1"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Sudoku Solver",
+			"type": "shell",
+			"command": "py",
+			"args": [
+				"-3",
+				"Sudoku\\solver.py",
+				"Sudoku\\puzzles\\norvig_01.txt",
+				"--stats"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

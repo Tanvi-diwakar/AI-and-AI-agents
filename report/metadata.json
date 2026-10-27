@@ -1,0 +1,19 @@
+{
+  "course": "F29AI - Artificial Intelligence and Intelligent Agents",
+  "title": "Search and Automated Planning",
+  "subtitle": "Coursework 1",
+  "members": [
+    {
+      "name": "Nashitah Abdia Shahid",
+      "id": "H00555549"
+    },
+    {
+      "name": "Tanvi Sandeep Diwakar",
+      "id": "H00561261"
+    }
+  ],
+  "canvas_group": "TO COMPLETE: campus and Canvas group",
+  "video_url": "TO COMPLETE: video-demo URL",
+  "genai_statement": "OpenAI Codex was used to analyse the supplied coursework briefs, generate the Sudoku solver and PDDL models, develop and run tests and benchmarks, and draft and format this report. It also assisted with source lookup and preparation of the demonstration outline.",
+  "date": "27 October 2026"
+}
