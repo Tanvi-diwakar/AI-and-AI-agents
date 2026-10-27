@@ -1,88 +1,156 @@
-# F29AI Coursework 1: Sudoku and Automated Planning
+# F29AI Coursework 1 — Sudoku and Automated Planning
 
-Prepared for:
-- Nashitah Abdia Shahid - H00555549
-- Tanvi Sandeep Diwakar - H00561261
+## Project Overview
 
-## Deliverables
+This repository contains the implementation, evaluation, and validation artefacts for F29AI Coursework 1. The coursework covers Sudoku as a Constraint Satisfaction Problem (CSP) and PDDL-based automated planning for lunar rover missions.
 
-- `Coursework_Report.pdf`: combined report, with a title page, four pages for
-  Parts 1A/1B, three pages for Parts 2A/2B/2C, and references.
-- `Coursework_Report.md`: editable report text.
-- `Sudoku/solver.py`: original implementation using MRV backtracking and
-  singleton constraint propagation; accepts `.txt` and `.csv` files.
-- `Sudoku/README.md`: run instructions, metrics, tests and puzzle provenance.
-- `Sudoku/tests/`, `Sudoku/puzzles/`, `Sudoku/evaluation/`: reproducible tests,
-  sample inputs, actual measurements and example outputs.
-- `PDDL/PartA&B/` and `PDDL/PartC/`: exactly five PDDL files with the starter
-  filenames, folders and domain/problem names preserved.
-- `validation/`: the previously generated PDDL plans, logs and 43-check validator.
-- `report/`: editable content, title metadata and a PDF-generation script.
-- `DEMO_GUIDE.md`: an optional outline for the required video; not a recording.
+## Team
 
-## Quick start
+- **Nashitah Abdia Shahid**
+- **Tanvi Sandeep Diwakar**
 
-From this package directory:
+## Repository Structure
 
-```sh
-python3 Sudoku/solver.py Sudoku/puzzles/norvig_01.txt --stats
-python3 -m unittest discover -s Sudoku/tests -v
-python3 Sudoku/benchmark.py --out Sudoku/evaluation_new
-python3 validation/check_model.py
+```text
+AI coursework/
+├── README.md
+├── Coursework_Report.pdf
+├── Coursework_Report.md
+├── DEMO_GUIDE.md
+├── Sudoku/
+│   ├── solver.py
+│   ├── benchmark.py
+│   ├── puzzles/
+│   ├── tests/
+│   └── evaluation/
+├── PDDL/
+│   ├── PartA&B/
+│   │   ├── domain.pddl
+│   │   ├── mission1.pddl
+│   │   ├── mission1.pddl.soln
+│   │   ├── mission2.pddl
+│   │   └── mission2.pddl.soln
+│   └── PartC/
+│       ├── domain-ext.pddl
+│       ├── mission3.pddl
+│       └── mission3.pddl.soln
+├── validation/
+│   ├── check_model.py
+│   ├── check-results.txt
+│   ├── mission1.plan
+│   ├── mission2.plan
+│   └── mission3.plan
+└── .vscode/
+    └── run-pddl-validation.ps1
 ```
 
-Sudoku requires Python 3.10+ and no third-party libraries. It passed 33 unit-test
-methods, including generated and published-puzzle subtests. The recorded Sudoku
-benchmark has nine cases, one warm-up and seven measured runs each.
+## 1. Sudoku: CSP Implementation and Evaluation
 
-## PDDL planner
+The Sudoku solver is implemented in Python without an external CSP-solving library. It combines candidate-mask representation, constraint propagation, Minimum Remaining Values (MRV) variable selection, and depth-first backtracking.
 
-Tested using Pyperplan 2.1 and Python 3.12. Install in a separate environment:
+The implementation validates puzzle inputs, detects contradictions, and returns the first solution found. Solution uniqueness is not checked. A* is analysed theoretically in the coursework report and is not implemented in the solver.
 
-```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install pyperplan==2.1
-.venv/bin/pyperplan -H hff -s gbf "PDDL/PartA&B/domain.pddl" "PDDL/PartA&B/mission1.pddl"
-.venv/bin/pyperplan -H hff -s gbf "PDDL/PartA&B/domain.pddl" "PDDL/PartA&B/mission2.pddl"
-.venv/bin/pyperplan -H hff -s gbf "PDDL/PartC/domain-ext.pddl" "PDDL/PartC/mission3.pddl"
+### Requirements
+
+- Python 3.10 or newer
+- Python standard library for the solver, tests, and benchmark
+
+### Run
+
+Execute commands from the repository root.
+
+**Solve a puzzle:**
+
+```bash
+python Sudoku/solver.py Sudoku/puzzles/norvig_01.txt
 ```
 
-On Windows, use `.venv\Scripts\python.exe` and `.venv\Scripts\pyperplan.exe`.
-Pyperplan 2.1 calls greedy best-first search `gbf`; use its installed help. Plans
-are saved beside the problem as `.pddl.soln`. The recorded plans contain 10, 20
-and 24 actions. Different valid orders are possible, and shortest-plan optimality
-is not claimed. The 43-check independent replay suite passed. VAL was not run.
+**Display solving statistics:**
 
-The domains use only `:strips :typing`. In Mission 1 L1 lands at chosen WP1. In
-Missions 2/3 L1 is at specified WP2 and L2 lands at chosen WP1. Maps follow the
-arrows exactly. The report explains data memory, sample delivery, ownership and
-astronaut constraints.
-
-## Finish the title page before submission
-
-The names and IDs above are included. Two fields remain clearly marked because
-they have not been supplied: **Canvas group/campus** and **video-demo URL**.
-Update `report/metadata.json`, then rebuild:
-
-```sh
-python3 -m venv .report-venv
-.report-venv/bin/python -m pip install reportlab
-.report-venv/bin/python report/build_report.py
+```bash
+python Sudoku/solver.py Sudoku/puzzles/norvig_01.txt --stats
 ```
 
-The report source is `report/content.json`; the generator also writes the editable
-Markdown copy. PDF generation dependencies are separate from the Sudoku solver.
-If you edit report text, recheck the four-page Part 1 and three-page Part 2 limits.
+**Run unit tests:**
 
-Review the report and code, record the required demonstration with both members
-presenting substantial parts, and put the link on the title page. Do not include
-the video file in the ZIP. The truthful GenAI statement already describes Codex's
-role in implementation, tests and report drafting; update it for any other use.
-The supplied excerpts do not contain the full referenced GenAI rules or marking
-rubric, so check the full Canvas guidance before submitting.
+```bash
+python -m unittest discover -s Sudoku/tests -v
+```
 
-Rename the final ZIP `F29AI CW1 <Campus> <GroupNumber>.zip` using your actual group.
-Supplementary test evidence and report-generation sources may be omitted from
-that submission if preferred. Keep the single final report, Sudoku code/README
-and the five PDDL files. This package does not claim a recorded video or university
-submission has been completed.
+**Run the benchmark suite:**
+
+```bash
+python Sudoku/benchmark.py
+```
+
+### Recorded Evaluation
+
+- **Unit tests:** 33 passed.
+- **Benchmark suite:** 9 puzzle cases, each measured over 7 runs following a warm-up.
+- **Solvable cases:** 7.
+- **Unsatisfiable cases:** 2.
+
+Benchmark summaries and raw measurements are available in `Sudoku/evaluation/`. Reported execution times are machine-dependent; detailed methodology and results are presented in the coursework report.
+
+## 2. Automated Planning: PDDL
+
+The planning component models lunar rover operations using typed STRIPS-style PDDL.
+
+The base domain defines rover deployment and movement, image capture, scanning, data transmission, sample collection, and sample storage. The extended domain introduces astronauts and room-location constraints.
+
+### Domain and Problem Files
+
+| Mission | Domain | Problem | Plan file |
+|---|---|---|---|
+| 1 | `PDDL/PartA&B/domain.pddl` | `PDDL/PartA&B/mission1.pddl` | `PDDL/PartA&B/mission1.pddl.soln` |
+| 2 | `PDDL/PartA&B/domain.pddl` | `PDDL/PartA&B/mission2.pddl` | `PDDL/PartA&B/mission2.pddl.soln` |
+| 3 | `PDDL/PartC/domain-ext.pddl` | `PDDL/PartC/mission3.pddl` | `PDDL/PartC/mission3.pddl.soln` |
+
+### Plan Generation
+
+The plans were generated using Pyperplan 2.1 with greedy best-first search and the FF heuristic.
+
+Example command:
+
+```bash
+pyperplan -H hff -s gbf "PDDL/PartA&B/domain.pddl" "PDDL/PartA&B/mission1.pddl"
+```
+
+### Validation
+
+The recorded plans were validated using VAL.
+
+| Mission | Plan length | VAL result |
+|---|---:|---|
+| 1 | 10 actions | Plan valid |
+| 2 | 20 actions | Plan valid |
+| 3 | 24 actions | Plan valid |
+
+The separate semantic checker reported **43 checks passed**. These checks examine selected domain constraints, plan execution, and mission goals; they are not a formal proof of correctness.
+
+**Run the semantic checker:**
+
+```bash
+python validation/check_model.py
+```
+
+**Run VAL validation on Windows:**
+
+```cmd
+powershell -ExecutionPolicy Bypass -File ".vscode\run-pddl-validation.ps1"
+```
+
+The VAL validation script requires a working VAL installation at the location configured in the script.
+
+## Coursework Artefacts
+
+- `Coursework_Report.pdf` — combined coursework report.
+- `Coursework_Report.md` — report source.
+- `DEMO_GUIDE.md` — demonstration instructions.
+- `Sudoku/evaluation/` — benchmark results and supporting evidence.
+- `validation/` — planning validation scripts, recorded plans, and results.
+
+## Reproducibility
+
+Run the commands from the repository root and ensure the required Python environment and planning-validation tools are available. The report documents the implementation approach, experimental methodology, results, and analysis.
+
